@@ -1,0 +1,7 @@
+PSRAM/HyperRAM controller for Tang Nano 9K 
+by Feng Zhou, 2022.8
+https://github.com/zf3/psram-tang-nano-9k
+Apache-2.0 license
+
+Modified by Joachim Draeger, 2025-06-10 (trivial changes)
+Apache-2.0 license or GPL-3.0 license

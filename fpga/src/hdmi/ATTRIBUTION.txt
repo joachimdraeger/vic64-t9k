@@ -1,0 +1,13 @@
+SystemVerilog code for HDMI 1.4b video/audio output on an FPGA.
+https://github.com/hdl-util/hdmi
+Originally dual-licensed under MIT and Apache 2.0.
+
+Then: Adaptation for an Atari ST core 
+from https://github.com/harbaum/MiSTeryNano
+
+No explicity license but GPL-v3 licensed code present in the same project.
+
+Current: Changes to the mode table for C64 
+from https://github.com/vossstef/tang_nano_20k_c64
+
+My understanding is that this is now GPL-v3 as explicitly stated in the last source.
