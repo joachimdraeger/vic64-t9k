@@ -1,7 +1,8 @@
+`define GW_IDE
+
 module serializer
 #(
-    parameter int NUM_CHANNELS = 3,
-    parameter real VIDEO_RATE
+    parameter int NUM_CHANNELS = 3
 )
 (
     input logic clk_pixel,
