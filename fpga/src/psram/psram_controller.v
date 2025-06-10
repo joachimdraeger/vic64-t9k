@@ -8,6 +8,8 @@
 //   Read latency is 12 cycles (1x) or 15 cycles(2x). In my test, 2x latency happens about 
 //   0.05% of time.
 
+// Modified by Joachim Draeger, 2025-06-10 (trivial changes)
+
 module PsramController #(
     parameter FREQ=81_000_000,// Actual clk frequency, to time 150us initialization delay
     parameter LATENCY=3       // tACC (Initial Latency) in W955D8MBYA datasheet:
@@ -46,6 +48,12 @@ reg ub;                     // 1 for upper byte
 reg [15:0] w_din;
 reg [23:0] cycles_sr;       // shift register counting cycles
 reg [63:0] dq_sr;           // shifts left 8-bit every cycle
+
+// Wire declarations for tri-state buffer signals
+wire cs_n_tbuf;
+wire rwds_tbuf;
+wire rwds_oen_tbuf;
+wire ck_tbuf;
 
 // DDR input output signals
 wire [7:0] dq_out_ris = dq_sr[63:56];
