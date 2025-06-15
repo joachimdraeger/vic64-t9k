@@ -79,8 +79,8 @@ scandoubler #(11) scandoubler (
         .b_in( b_in ),
 
         // output interface
-        // .hs_out(sd_hs_n),
-        // .vs_out(sd_vs_n),
+        .hs_out(), // .hs_out(sd_hs_n),
+        .vs_out(), // .vs_out(sd_vs_n),
         .r_out(sd_r),
         .g_out(sd_g),
         .b_out(sd_b)
