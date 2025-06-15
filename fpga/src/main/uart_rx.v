@@ -29,12 +29,7 @@ module uart_rx #(
     input wire clk,
     input wire rx_p,
     output reg [7:0] data,
-    output reg data_ready,
-    output reg debug_rx,
-    output reg debug0,
-    output reg debug1,
-    output reg debug2,
-    output reg debug3 
+    output reg data_ready
 );
 
 // States
