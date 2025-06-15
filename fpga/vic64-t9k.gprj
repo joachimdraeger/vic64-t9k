@@ -1,0 +1,61 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW1NR-9C" pn="GW1NR-LV9QN88PC6/I5">gw1nr9c-004</Device>
+    <FileList>
+
+        <File path="src/vic64-t9k.cst" type="file.cst" enable="1"/>
+        <File path="src/top.v" type="file.verilog" enable="1"/>
+        <File path="src/clocks.v" type="file.verilog" enable="1"/>
+        <File path="src/psram_wrapper.v" type="file.verilog" enable="1"/>
+
+        <File path="src/main/startup.v" type="file.verilog" enable="1"/>
+        <File path="src/main/bus.v" type="file.verilog" enable="1"/>
+        <File path="src/main/core_cycle.v" type="file.verilog" enable="1"/>
+        <File path="src/main/vicii_top.vhd" type="file.vhdl" enable="1"/>
+  
+        <File path="src/main/psram_cdc.v" type="file.verilog" enable="1"/>
+        <File path="src/main/cdc_single_strobe.v" type="file.verilog" enable="1"/>
+
+        <File path="src/main/flash_controller.v" type="file.verilog" enable="1"/>
+        <File path="src/main/flash_dma.v" type="file.verilog" enable="1"/>
+        <File path="src/main/flash_io.v" type="file.verilog" enable="1"/>
+        
+        <File path="src/main/uart.v" type="file.verilog" enable="1"/>
+        <File path="src/main/uart_rx.v" type="file.verilog" enable="1"/>
+        <File path="src/main/uart_tx.v" type="file.verilog" enable="1"/>      
+        <File path="src/main/io_leds.v" type="file.verilog" enable="1"/>
+
+        <File path="src/lib/video/scandoubler.v" type="file.verilog" enable="1"/>
+        <File path="src/lib/video/tmds_differential.v" type="file.verilog" enable="1"/>
+        <File path="src/lib/video/video.v" type="file.verilog" enable="1"/>
+        <File path="src/lib/video/video_analyzer.v" type="file.verilog" enable="1"/>
+
+        <File path="src/lib/vicii/fpga64_rgbcolor.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/lib/vicii/video_vicII_656x.vhd" type="file.vhdl" enable="1"/>
+
+        <File path="src/lib/t65/T65.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/lib/t65/T65_ALU.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/lib/t65/T65_MCode.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/lib/t65/T65_Pack.vhd" type="file.vhdl" enable="1"/>
+        
+        <File path="src/lib/psram/psram_controller.v" type="file.verilog" enable="1"/>
+        <File path="src/lib/hdmi/audio_clock_regeneration_packet.sv" type="file.verilog" enable="1"/>
+        <File path="src/lib/hdmi/audio_info_frame.sv" type="file.verilog" enable="1"/>
+        <File path="src/lib/hdmi/audio_sample_packet.sv" type="file.verilog" enable="1"/>
+        <File path="src/lib/hdmi/auxiliary_video_information_info_frame.sv" type="file.verilog" enable="1"/>
+        <File path="src/lib/hdmi/hdmi.sv" type="file.verilog" enable="1"/>
+        <File path="src/lib/hdmi/packet_assembler.sv" type="file.verilog" enable="1"/>
+        <File path="src/lib/hdmi/packet_picker.sv" type="file.verilog" enable="1"/>
+        <File path="src/lib/hdmi/serializer.sv" type="file.verilog" enable="1"/>
+        <File path="src/lib/hdmi/source_product_description_info_frame.sv" type="file.verilog" enable="1"/>
+        <File path="src/lib/hdmi/tmds_channel.sv" type="file.verilog" enable="1"/>
+
+        <File path="src/gowin/clkdiv/clkdiv5.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin/rpll/clk_2x_64_rpll.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin/rpll/clk_5x.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin/sp/color_ram.v" type="file.verilog" enable="1"/>
+    </FileList>
+</Project>
