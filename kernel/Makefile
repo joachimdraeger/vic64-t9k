@@ -2,7 +2,14 @@
 # Setup
 # -----------------------------------------------------------------------------
 
+
+
+
 CHARGEN_URL = https://github.com/VICE-Team/svn-mirror/raw/refs/heads/main/vice/data/C64/chargen-901225-01.bin
+UART_DEV = /dev/ttyUSB1
+
+-include ../Makefile.config
+
 
 .PRECIOUS: build/%.bin
 
@@ -43,7 +50,7 @@ sim65: build/sim65.prg
 # -----------------------------------------------------------------------------
 
 testing: build/kernel.testing.bin
-	python3 ../uploader/uploader.py --skip-validate --file $< --jump-before F800 --address C800 --jump-after C800
+	python3 ../uploader/uploader.py --skip-validate --file $< --jump-before F800 --address C800 --jump-after C800 --port $(UART_DEV)
 
 # -----------------------------------------------------------------------------
 # Flash 

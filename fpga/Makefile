@@ -6,7 +6,7 @@
 GW_SH = gw_sh
 UART_DEV = /dev/ttyUSB1
 
--include Makefile.config
+-include ../Makefile.config
 
 # -----------------------------------------------------------------------------
 # Setup
@@ -14,6 +14,9 @@ UART_DEV = /dev/ttyUSB1
 
 SHELL := /bin/bash
 .SHELLFLAGS := -o pipefail -c
+
+.PHONY: default
+default: pnr
 
 .PHONY: build
 build:
@@ -56,3 +59,19 @@ pnr: | build check-gw-sh
 # Upload the bitstream to the FPGA
 fpga:
 	openFPGALoader -b tangnano9k -m impl/pnr/vic64-t9k.fs
+
+# -----------------------------------------------------------------------------
+# Serial communication test targets
+# -----------------------------------------------------------------------------
+
+.PHONY: minicom
+minicom:
+	stty -F /dev/ttyUSB1 9600 cs8 -cstopb -parenb -crtscts -ixon -ixoff && minicom -b 9600 -D $(UART_DEV)
+
+.PHONY: sleep
+sleep:
+	sleep 3
+
+.PHONY: test-upload
+test-upload:
+	python3 ../uploader/uploader.py --file ../uploader/samples/129.bin --address 8000 --port $(UART_DEV)
