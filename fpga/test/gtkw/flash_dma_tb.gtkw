@@ -1,0 +1,50 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Fri Apr  4 10:40:15 2025
+[*]
+[dumpfile] "/home/joachim/source/github/joachimdraeger/tang-experiments/hello_6502/build/v/flash_dma_tb.vcd"
+[dumpfile_mtime] "Fri Apr  4 10:39:16 2025"
+[dumpfile_size] 46273
+[savefile] "/home/joachim/source/github/joachimdraeger/tang-experiments/hello_6502/test/v/flash_dma_tb.gtkw"
+[timestart] 5640800
+[size] 1972 845
+[pos] -1 -1
+*-17.043482 4054200 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] flash_dma_tb.
+[treeopen] flash_dma_tb.flash_dma_inst.
+[treeopen] flash_dma_tb.psram_wrapper_inst.
+[sst_width] 309
+[signals_width] 327
+[sst_expanded] 1
+[sst_vpaned_height] 238
+@28
+flash_dma_tb.clk32
+flash_dma_tb.clk64
+flash_dma_tb.reset_n
+flash_dma_tb.flash_dma_start
+@24
+[color] 2
+flash_dma_tb.flash_dma_inst.state[2:0]
+flash_dma_tb.flash_dma_inst.data_count[15:0]
+@22
+flash_dma_tb.flash_dma_inst.flash_addr[23:0]
+@28
+flash_dma_tb.flash_dma_inst.flash_req_r_addr
+flash_dma_tb.flash_dma_inst.flash_req_r_next
+flash_dma_tb.flash_dma_inst.psram_w_strobe
+@24
+flash_dma_tb.flash_dma_inst.state[2:0]
+@23
+flash_dma_tb.flash_dma_inst.psram_addr[21:0]
+@28
+flash_dma_tb.flash_dma_inst.flash_d_ready
+flash_dma_tb.flash_dma_inst.psram_busy
+@22
+flash_dma_tb.flash_controller_sim_inst.bit_pos[4:0]
+flash_dma_tb.psram_wrapper_inst.psram_stub_inst.din[15:0]
+flash_dma_tb.psram_wrapper_inst.psram_stub_inst.addr[21:0]
+@28
+flash_dma_tb.psram_wrapper_inst.psram_stub_inst.write
+flash_dma_tb.psram_wrapper_inst.clk32
+[pattern_trace] 1
+[pattern_trace] 0

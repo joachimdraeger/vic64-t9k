@@ -1,0 +1,25 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Sat Jun 14 08:17:58 2025
+[*]
+[dumpfile] "/home/joachim/source/github/joachimdraeger/tang-experiments/hello_6502/build/uart_tb.vcd"
+[dumpfile_mtime] "Sat Jun 14 08:16:20 2025"
+[dumpfile_size] 5946317
+[savefile] "/home/joachim/source/github/joachimdraeger/tang-experiments/hello_6502/test/gtkw/uart_tb.gtkw"
+[timestart] 0
+[size] 2005 600
+[pos] -1 -1
+*-32.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 309
+[signals_width] 130
+[sst_expanded] 1
+[sst_vpaned_height] 156
+@28
+uart_tb.tx_p
+uart_tb.clk
+@22
+uart_tb.d_in[7:0]
+@23
+uart_tb.d_out[7:0]
+[pattern_trace] 1
+[pattern_trace] 0
