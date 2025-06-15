@@ -1,0 +1,67 @@
+// VIC64-T9K - C64 VIC-II video chip on the Tang Nano 9K
+// https://github.com/joachimdraeger/vic64-t9k
+// Copyright (C) 2025  Joachim Draeger
+
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+IO_LOC "clk27" 52;
+IO_PORT "clk27" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+IO_LOC "ext_resetn" 4;
+IO_PORT "ext_resetn" IO_TYPE=LVCMOS18 PULL_MODE=UP BANK_VCCIO=1.8;
+
+IO_LOC "tx_p" 17;
+IO_PORT "tx_p" IO_TYPE=LVCMOS33;
+
+IO_LOC "rx_p" 18;
+IO_PORT "rx_p" IO_TYPE=LVCMOS33;
+
+// HDMI output pins - commented out as these signals don't exist in the design
+IO_LOC "hdmi_tx_clk_p" 69,68;
+IO_PORT "hdmi_tx_clk_p" IO_TYPE=LVCMOS33D PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+
+IO_LOC "hdmi_tx_p[0]" 71,70;
+IO_PORT "hdmi_tx_p[0]" IO_TYPE=LVCMOS33D PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+
+IO_LOC "hdmi_tx_p[1]" 73,72;
+IO_PORT "hdmi_tx_p[1]" IO_TYPE=LVCMOS33D PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+
+IO_LOC "hdmi_tx_p[2]" 75,74;
+IO_PORT "hdmi_tx_p[2]" IO_TYPE=LVCMOS33D PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+
+// LEDS
+
+IO_LOC "leds_out[5]" 16;
+IO_PORT "leds_out[5]" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8 BANK_VCCIO=1.8;
+IO_LOC "leds_out[4]" 15;
+IO_PORT "leds_out[4]" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8 BANK_VCCIO=1.8;
+IO_LOC "leds_out[3]" 14;
+IO_PORT "leds_out[3]" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8 BANK_VCCIO=1.8;
+IO_LOC "leds_out[2]" 13;
+IO_PORT "leds_out[2]" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8 BANK_VCCIO=1.8;
+IO_LOC "leds_out[1]" 11;
+IO_PORT "leds_out[1]" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8 BANK_VCCIO=1.8;
+IO_LOC "leds_out[0]" 10;
+IO_PORT "leds_out[0]" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8 BANK_VCCIO=1.8;
+
+// Flash SPI interface
+IO_LOC "flash_clk" 59;
+IO_PORT "flash_clk" IO_TYPE=LVCMOS33;
+IO_LOC "flash_miso" 62;
+IO_PORT "flash_miso" IO_TYPE=LVCMOS33;
+IO_LOC "flash_mosi" 61;
+IO_PORT "flash_mosi" IO_TYPE=LVCMOS33;
+IO_LOC "flash_cs" 60;
+IO_PORT "flash_cs" IO_TYPE=LVCMOS33;
