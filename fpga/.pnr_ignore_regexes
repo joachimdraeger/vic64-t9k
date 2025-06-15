@@ -1,0 +1,44 @@
+GOWIN Tcl Command Line Console
+^Open project
+^GowinSynthesis start
+^Running parser
+^Analyzing architecture 
+^Analyzing entity 
+^Analyzing VHDL file 
+^Analyzing Verilog file 
+^Analyzing package 
+^Switching to VHDL mode to elaborate design unit 
+^Processing '.+'
+^Returning to Verilog mode to proceed with elaboration
+^Extracting RAM for identifier 
+^Compiling module 
+^NOTE  \(EX0101\) : Current top module is 
+Running netlist conversion
+^Running device independent optimization
+Optimizing Phase .+ completed
+^Running inference
+^Running technical mapping
+Generate netlist file .+ completed
+Generate report file .+ completed
+GowinSynthesis finish
+Processing netlist completed
+^Reading netlist file: 
+^Parsing netlist file 
+^Reading constraint file: 
+^Physical Constraint parsed completed
+^Running placement
+Placement Phase .+ completed
+Tech-Mapping Phase .+ completed
+Inferring Phase .+ completed
+Running routing
+Routing Phase .+ completed
+Generate file ".+" completed
+Placement and routing completed
+Bitstream generation in progress
+Bitstream generation completed
+Running power analysis
+Power analysis completed
+Running timing analysis
+Timing analysis completed
+^[A-Z][a-z][a-z] [A-Z][a-z][a-z] [0-9]{1,2} [0-9][0-9]:[0-9][0-9]:[0-9][0-9] [0-9][0-9][0-9][0-9]$
+^$
