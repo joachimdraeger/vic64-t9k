@@ -58,7 +58,7 @@ pnr: | build check-gw-sh
 .PHONY: pnr-grep
 # Filter out the pnr.log file to only show unexpected warnings and errors
 pnr-grep:
-	grep -v -E -f .pnr_ignore_regexes build/pnr.log 
+	grep -v -E -f .pnr_ignore_regexes build/pnr.log || echo "No unexpected warnings or errors found"
 
 .PHONY: fpga
 # Upload the bitstream to the FPGA

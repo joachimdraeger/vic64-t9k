@@ -2,4 +2,4 @@ build/
 tmp/
 work/
 *.gprj.user
-Makefile.config
+

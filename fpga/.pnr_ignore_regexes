@@ -42,3 +42,34 @@ Running timing analysis
 Timing analysis completed
 ^[A-Z][a-z][a-z] [A-Z][a-z][a-z] [0-9]{1,2} [0-9][0-9]:[0-9][0-9]:[0-9][0-9] [0-9][0-9][0-9][0-9]$
 ^$
+WARN  \(EX0211\) : The output port "O_psram_ck_n\[1\]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible\(".*/fpga/src/top\.v":34\)
+WARN  \(EX0211\) : The output port "O_psram_ck_n\[0\]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible\(".*/fpga/src/top\.v":34\)
+WARN  \(EX0211\) : The output port "O_psram_reset_n\[1\]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible\(".*/fpga/src/top\.v":37\)
+WARN  \(EX0211\) : The output port "O_psram_reset_n\[0\]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible\(".*/fpga/src/top\.v":37\)
+WARN  \(CV0019\) : Inout IO_psram_rwds\[1\] is unused\(".*/src/top\.v":35\)
+WARN  \(CV0021\) : Inout IO_psram_dq\[15:8\] is unused\(".*/src/top\.v":36\)
+WARN  \(CK3000\) : Can't calculate clocks' relationship between: "core/phi_Z" and "clocks_inst/clkdiv5_inst/clkdiv_inst/CLKOUT\.default_gen_clk"
+WARN  \(CK3000\) : Can't calculate clocks' relationship between: "video_inst/clk_audio" and "clocks_inst/clkdiv5_inst/clkdiv_inst/CLKOUT\.default_gen_clk"
+WARN  \(CK3000\) : Can't calculate clocks' relationship between: "clocks_inst/clkdiv5_inst/clkdiv_inst/CLKOUT\.default_gen_clk" and "core/phi_Z"
+WARN  \(TA1132\) :  'video_inst/clk_audio' was determined to be a clock but was not created\.
+WARN  \(TA1132\) :  'phi_Z' was determined to be a clock but was not created\.
+WARN  \(TA1132\) :  'clocks_inst/clkdiv5_inst/clkdiv_inst/CLKOUT\.default_gen_clk' was determined to be a clock but was not created\.
+WARN  \(TA1117\) : Can't calculate clocks' relationship between: "video_inst/clk_audio" and "clocks_inst/clkdiv5_inst/clkdiv_inst/CLKOUT\.default_gen_clk"
+WARN  \(TA1117\) : Can't calculate clocks' relationship between: "phi_Z" and "clocks_inst/clkdiv5_inst/clkdiv_inst/CLKOUT\.default_gen_clk"
+WARN  \(TA1117\) : Can't calculate clocks' relationship between: "clocks_inst/clkdiv5_inst/clkdiv_inst/CLKOUT\.default_gen_clk" and "phi_Z"
+WARN  \(EX3073\) : Port 'Q1' remains unconnected for this instance\(".*/src/lib/psram/psram_controller\.v":189\)
+WARN  \(EX3073\) : Port 'Q1' remains unconnected for this instance\(".*/src/lib/psram/psram_controller\.v":208\)
+WARN  \(EX3791\) : Expression size 16 truncated to fit in target size 15\(".*/src/lib/psram/psram_controller\.v":169\)
+WARN  \(EX2565\) : Input 'TX' on this instance is undriven\. Assigning to 0, simulation mismatch possible\. Please assign the input or remove the declaration\(".*/src/lib/psram/psram_controller\.v":189\)
+WARN  \(EX2565\) : Input 'TX' on this instance is undriven\. Assigning to 0, simulation mismatch possible\. Please assign the input or remove the declaration\(".*/src/lib/psram/psram_controller\.v":208\)
+WARN  \(EX0211\) : The output port "O_psram_ck\[1\]" of module "PsramController\(FREQ=63000000\)" has no driver, assigning undriven bits to Z, simulation mismatch possible\(".*/src/lib/psram/psram_controller\.v":32\)
+WARN  \(EX0211\) : The output port "O_psram_cs_n\[1\]" of module "PsramController\(FREQ=63000000\)" has no driver, assigning undriven bits to Z, simulation mismatch possible\(".*/src/lib/psram/psram_controller\.v":35\)
+WARN  \(NL0002\) : The module "audio_info_frame" instantiated to "audio_info_frame" is swept in optimizing\(".*/src/lib/hdmi/packet_picker\.sv":143\)
+WARN  \(NL0002\) : The module "audio_sample_packet" instantiated to "audio_sample_packet" is swept in optimizing\(".*/src/lib/hdmi/packet_picker\.sv":132\)
+WARN  \(NL0002\) : The module "auxiliary_video_information_info_frame" instantiated to "auxiliary_video_information_info_frame" is swept in optimizing\(".*/src/lib/hdmi/packet_picker\.sv":137\)
+WARN  \(EX3780\) : Using initial value of 'CHANNEL_LEFT' since it is never assigned\(".*/src/lib/hdmi/audio_sample_packet\.sv":63\)
+WARN  \(EX3780\) : Using initial value of 'CHANNEL_RIGHT' since it is never assigned\(".*/src/lib/hdmi/audio_sample_packet\.sv":64\)
+WARN  \(EX1998\) : Net 'headers\[255\]\[23\]' does not have a driver\(".*/src/lib/hdmi/packet_picker\.sv":30\)
+WARN  \(EX1998\) : Net 'subs\[255\]\[3\]\[55\]' does not have a driver\(".*/src/lib/hdmi/packet_picker\.sv":31\)
+'others' clause is never selected\(".*/src/lib/t65/T65_MCode\.vhd":1084\)
+WARN  \(NL0002\) : The module "source_product_description_info_frame" instantiated to "source_product_description_info_frame" is swept in optimizing\(".*/src/lib/hdmi/packet_picker\.sv":140\)
