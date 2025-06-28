@@ -1,4 +1,5 @@
 # Copy this file to Makefile.config to override configuration
 
-# GW_SH = <path to the go_sh binary of the Gowin IDE install>
-# UART_DEV = /dev/ttyUSB1
+
+# GW_SH=<path to the Gowin IDE install>/IDE/bin/gw_sh
+# UART_DEV=/dev/ttyUSB1

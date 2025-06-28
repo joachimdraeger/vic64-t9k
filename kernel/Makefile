@@ -71,3 +71,10 @@ build/image.bin: build/kernel.bin | build/chargen.bin
 flash: build/image.bin
 	openFPGALoader -b tangnano9k --external-flash build/image.bin
 
+# -----------------------------------------------------------------------------
+# Interact with the memory monitor
+# -----------------------------------------------------------------------------
+
+.PHONY: com
+com:
+	stty -F $(UART_DEV) 9600 cs8 -cstopb -parenb -crtscts -ixon -ixoff && minicom -b 9600 -D $(UART_DEV)

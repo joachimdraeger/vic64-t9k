@@ -255,6 +255,7 @@ class App:
         parser.add_argument('--jump-after', type=str)
         parser.add_argument('--read', type=int, help='Number of bytes to read from memory')
         parser.add_argument('--write', type=str, help='hex bytes to write')
+        parser.add_argument('--screen-off', action='store_true', help='Keep screen output off')
         parser.add_argument('--debug', action='store_true', help='Enable debug mode')
         self.args = parser.parse_args()
         self.monitor = MonitorController(port=self.args.port, debug=self.args.debug)
@@ -282,7 +283,7 @@ class App:
             self.monitor.write_memory(self.args.address, self.payload)
         if self.args.validate:
             self.monitor.read_memory(self.args.address, payload=self.payload)
-        self.monitor.set_screen(True)
+        self.monitor.set_screen(not self.args.screen_off)
         if self.args.jump_after:
             self.monitor.jump_to(self.args.jump_after)
         else:

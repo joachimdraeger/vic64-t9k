@@ -71,7 +71,7 @@ fpga:
 
 .PHONY: minicom
 minicom:
-	stty -F /dev/ttyUSB1 9600 cs8 -cstopb -parenb -crtscts -ixon -ixoff && minicom -b 9600 -D $(UART_DEV)
+	stty -F $(UART_DEV) 9600 cs8 -cstopb -parenb -crtscts -ixon -ixoff && minicom -b 9600 -D $(UART_DEV)
 
 .PHONY: sleep
 sleep:
