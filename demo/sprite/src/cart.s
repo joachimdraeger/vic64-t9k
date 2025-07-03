@@ -28,6 +28,7 @@
 .addr warmstart         ; $8002: Warm start vector (low byte, high byte)
 
 ; CBM80 signature at $8004 - required for cartridge detection
+; https://www.c64-wiki.com/wiki/Cartridge#Cartridge_boot-up
 .byte $C3, $C2, $CD, $38, $30   ; "CBM80" in reverse PETSCII
 
 .segment "STARTUP"

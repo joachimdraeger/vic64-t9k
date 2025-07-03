@@ -3,4 +3,5 @@
 
 # GW_SH=<path to the Gowin IDE install>/IDE/bin/gw_sh
 # UART_DEV=/dev/ttyUSB1
-# VICE_ROM_PATH=
+# VICE_ROM_PATH=<path to C64 roms to use when developing with VICE (OPTIONAL)> 
+
