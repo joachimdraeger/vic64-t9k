@@ -71,15 +71,14 @@ module core_cycle (
     // 
     // Important cycle constants and their purposes:
     // 
-    // Cycle 0  - Memory access cycle 1 (PSRAM read/write strobe)
-    //            Bus access cycle 1 (after phi falling edge)
+    // Cycle 1  - Memory access cycle 1 (PSRAM read/write strobe)
     // Cycle 2  - CYCLE_EXT2 - Pixel enable
     // Cycle 6  - CYCLE_DMA2 - Pixel enable
     // Cycle 10 - CYCLE_EXT6 - Pixel enable
     // Cycle 13 - RAM error check cycle 1
     // Cycle 14 - CYCLE_VIC2 - VIC-II cycle 2, VIC enable, Pixel enable
     // Cycle 15 - CYCLE_VIC3 - VIC-II cycle 3, PHI clock rising edge
-    // Cycle 16 - Memory access cycle 2 (PSRAM read/write strobe)
+    // Cycle 17 - Memory access cycle 2 (PSRAM read/write strobe)
     //            Bus access cycle 2 (after phi rising edge)
     // Cycle 18 - CYCLE_CPU2 - Pixel enable
     // Cycle 22 - CYCLE_CPU6 - Pixel enable
@@ -89,41 +88,38 @@ module core_cycle (
     // Cycle 31 - CYCLE_CPUF - PHI clock falling edge, Reset handling
     // =========================================================================
 
-    // System cycle counters
-    reg [4:0] preCycle;
-    wire [4:0] sysCycle;
+    // System cycle counter
+    reg [4:0] sys_cycle;
 
     // Initialize registers
     initial begin
         resetn = 1'b0;
         phi = 1'b0;
         psram_ram_error = 1'b0;
-        preCycle = 5'd0;
+        sys_cycle = 5'd0;
         psram_r_strobe = 1'b0;
         psram_w_strobe = 1'b0;
     end
 
-    // Increment preCycle on each clock
+    // Increment sys_cycle on each clock
     always @(posedge clk32) begin
-        preCycle <= preCycle + 5'd1;
+        sys_cycle <= sys_cycle + 5'd1;
     end
-
-    assign sysCycle = preCycle;
 
     // Reset handling
     always @(posedge clk32) begin
-        if (preCycle == 5'd31) begin  // CYCLE_CPUF
+        if (sys_cycle == 5'd31) begin  // CYCLE_CPUF
             resetn <= reset_n_in;
         end
     end
 
     // PHI0/2-clock emulation
     always @(posedge clk32) begin
-        if (sysCycle == 5'd15) begin  // CYCLE_VIC3
+        if (sys_cycle == 5'd15) begin  // CYCLE_VIC3
             phi <= 1'b1;
             // CPU has bus logic would go here if needed
         end
-        if (sysCycle == 5'd31) begin  // CYCLE_CPUF
+        if (sys_cycle == 5'd31) begin  // CYCLE_CPUF
             if (!vic_aec) begin
                 cpu_data_in_latched <= cpu_data_in_bus;
             end
@@ -136,14 +132,14 @@ module core_cycle (
     always @(posedge clk32) begin
         // having this 2 cycles after the phi edge seems to improve timing (example: status read for uart)
         // moving it to 16 because there will be another cycle added in bus.v
-        bus_access_strobe_pre <= (sysCycle == 5'd16) ? 1'b1 : 1'b0;
-        bus_access_pre <= (sysCycle >= 5'd16 && sysCycle <= 5'd30) ? 1'b1 : 1'b0;
+        bus_access_strobe_pre <= (sys_cycle == 5'd16) ? 1'b1 : 1'b0;
+        bus_access_pre <= (sys_cycle >= 5'd16 && sys_cycle <= 5'd30) ? 1'b1 : 1'b0;
     end
 
     // VIC enable timing
     always @(posedge clk32) begin
         enableVic <= 1'b0;
-        case (sysCycle)
+        case (sys_cycle)
             5'd14: enableVic <= 1'b1;  // CYCLE_VIC2
             5'd30: enableVic <= 1'b1;  // CYCLE_CPUE
             default: enableVic <= 1'b0;
@@ -153,14 +149,14 @@ module core_cycle (
     // Pixel timing
     always @(posedge clk32) begin
         enablePixel <= 1'b0;
-        if (sysCycle == 5'd2  || // CYCLE_EXT2
-            sysCycle == 5'd6  || // CYCLE_DMA2
-            sysCycle == 5'd10 || // CYCLE_EXT6
-            sysCycle == 5'd14 || // CYCLE_VIC2
-            sysCycle == 5'd18 || // CYCLE_CPU2
-            sysCycle == 5'd22 || // CYCLE_CPU6
-            sysCycle == 5'd26 || // CYCLE_CPUA
-            sysCycle == 5'd30)   // CYCLE_CPUE
+        if (sys_cycle == 5'd2  || // CYCLE_EXT2
+            sys_cycle == 5'd6  || // CYCLE_DMA2
+            sys_cycle == 5'd10 || // CYCLE_EXT6
+            sys_cycle == 5'd14 || // CYCLE_VIC2
+            sys_cycle == 5'd18 || // CYCLE_CPU2
+            sys_cycle == 5'd22 || // CYCLE_CPU6
+            sys_cycle == 5'd26 || // CYCLE_CPUA
+            sys_cycle == 5'd30)   // CYCLE_CPUE
         begin
             enablePixel <= 1'b1;
         end
@@ -174,7 +170,7 @@ module core_cycle (
         
         // Check for memory access at appropriate cycles
         // The CPU would work fine at cycle 0 but the VIC-II needs an extra cycle to set the address
-        if (psram_en && (sysCycle == 5'd1 || sysCycle == 5'd17)) begin
+        if (psram_en && (sys_cycle == 5'd1 || sys_cycle == 5'd17)) begin
             if (r_wn) begin
                 psram_r_strobe <= 1'b1;
             end else begin
@@ -183,7 +179,7 @@ module core_cycle (
         end
         
         // Check for RAM errors
-        if ((sysCycle == 5'd13 || sysCycle == 5'd29) && psram_busy) begin
+        if ((sys_cycle == 5'd13 || sys_cycle == 5'd29) && psram_busy) begin
             psram_ram_error <= 1'b1;
         end else if (reset_n_in == 1'b0) begin
             psram_ram_error <= 1'b0;
