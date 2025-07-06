@@ -2,9 +2,6 @@
 # Setup
 # -----------------------------------------------------------------------------
 
-
-
-
 CHARGEN_URL = https://github.com/VICE-Team/svn-mirror/raw/refs/heads/main/vice/data/C64/chargen-901225-01.bin
 UART_DEV = /dev/ttyUSB1
 

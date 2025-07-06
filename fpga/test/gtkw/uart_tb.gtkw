@@ -1,24 +1,31 @@
 [*]
 [*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
-[*] Sat Jun 14 08:17:58 2025
+[*] Sun Jul  6 09:19:18 2025
 [*]
-[dumpfile] "/home/joachim/source/github/joachimdraeger/tang-experiments/hello_6502/build/uart_tb.vcd"
-[dumpfile_mtime] "Sat Jun 14 08:16:20 2025"
-[dumpfile_size] 5946317
-[savefile] "/home/joachim/source/github/joachimdraeger/tang-experiments/hello_6502/test/gtkw/uart_tb.gtkw"
+[dumpfile] "/home/joachim/source/github/joachimdraeger/vic64-t9k/fpga/build/uart_tb.vcd"
+[dumpfile_mtime] "Sun Jul  6 09:09:22 2025"
+[dumpfile_size] 5946175
+[savefile] "/home/joachim/source/github/joachimdraeger/vic64-t9k/fpga/test/gtkw/uart_tb.gtkw"
 [timestart] 0
-[size] 2005 600
+[size] 2005 606
 [pos] -1 -1
 *-32.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] uart_tb.
+[treeopen] uart_tb.uart_inst.
 [sst_width] 309
-[signals_width] 130
+[signals_width] 200
 [sst_expanded] 1
-[sst_vpaned_height] 156
+[sst_vpaned_height] 158
 @28
 uart_tb.tx_p
 uart_tb.clk
 @22
-uart_tb.d_in[7:0]
+uart_tb.send_byte.byte_to_send[7:0]
+uart_tb.uart_inst.d_in[7:0]
+uart_tb.uart_inst.uart_tx_inst.data[7:0]
+@28
+uart_tb.uart_inst.uart_tx_inst.state[1:0]
+uart_tb.uart_inst.select
 @23
 uart_tb.d_out[7:0]
 [pattern_trace] 1
