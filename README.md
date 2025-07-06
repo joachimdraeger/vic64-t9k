@@ -301,12 +301,16 @@ options:
   --debug               Enable debug mode
   ```
   
-  ## License and Credits
+## License and Credits
 
 This project is licensed under the GPL v3 license. See the included [LICENSE](LICENSE) file. 
 
 Core files around the VIC, video and CPU come from the [C64_MiSTer](https://github.com/MiSTer-devel/C64_MiSTer) project which is GPL licensed. 
 
+## Contact
 
+- Feel free do raise an Issue or PR for bug fixes or improvements.
+- Do you have any question about the project? Or would you like to share something about Retro Computing on FPGAs? [Discussions](
+https://github.com/joachimdraeger/vic64-t9k/discussions/categories/general)
 
 
