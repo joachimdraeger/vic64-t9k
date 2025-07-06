@@ -19,7 +19,7 @@ The Tang Nano 9k seems to be in the sweet spot of being cheap, capable enough fo
 
 ![Memory Monitor Demo](https://i.imgur.com/dDoxtu8.gif)
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites 
 
@@ -106,7 +106,7 @@ The following example changes cursor, border and background colors. The addresse
 >W D020 00
 ```
 
-## Demos
+## 📺 Demos
 
 ### Koala bitmap display
 
@@ -166,7 +166,7 @@ The code in `demo/sprite/src` has two entry points based whether it runs on the 
 - `vic64.s` just consists of a single `JMP` instruction. Also `vic64.cfg` is simpler.
 - `main.s` contains the sprite as a byte sequence and the code to display and move it on the screen using a sine table and delay loops.
 
-## FPGA Implementation
+## 💻 FPGA Implementation
 
 ![FPA Architecture Overview](doc/img/fpa-overview.png)
 
@@ -256,7 +256,7 @@ cd fpga
 make dma-wave
 ```
 
-## Kernel Development
+## 💾 Kernel Development
 
 The Kernel implements the following:
 
@@ -301,7 +301,7 @@ options:
   --debug               Enable debug mode
   ```
   
-## License and Credits
+## 🏆 License and Credits
 
 This project is licensed under the GPL v3 license. See the included [LICENSE](LICENSE) file. 
 
@@ -317,7 +317,7 @@ https://github.com/zf3/psram-tang-nano-9k
 These Open Source projects provided great inspiration and learnings. ❤️
 
 
-## Contact
+## 📧 Contact
 
 - Feel free do raise an Issue or PR for bug fixes or improvements.
 - Do you have any question about the project? Or would you like to share something about Retro Computing on FPGAs? [Discussions](
