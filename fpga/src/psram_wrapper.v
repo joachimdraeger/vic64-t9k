@@ -17,7 +17,7 @@
 
 
 // -----------------------------------------------------------------------------
-// Wrapps psram controller with clock domain crossing logic
+// Wraps psram controller with clock domain crossing logic
 // -----------------------------------------------------------------------------
 
 `timescale 1ns/1ps
