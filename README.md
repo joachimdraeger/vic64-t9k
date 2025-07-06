@@ -305,7 +305,17 @@ options:
 
 This project is licensed under the GPL v3 license. See the included [LICENSE](LICENSE) file. 
 
-Core files around the VIC, video and CPU come from the [C64_MiSTer](https://github.com/MiSTer-devel/C64_MiSTer) project which is GPL licensed. 
+- Core files around the VIC, video and CPU come from the https://github.com/MiSTer-devel/C64_MiSTer project which is GPL licensed. 
+- Origins of the VIC-II implementation go back to https://www.syntiac.com/fpga64.html
+- SystemVerilog code for HDMI 1.4b video/audio output on an FPGA.
+https://github.com/hdl-util/hdmi 
+- The video module from the _C64_MiSTer_  has been adapted for the Tang Nano 20k, at first for an Atari ST core: https://github.com/harbaum/MiSTeryNano. This also includes adaptation of the HDMI library. 
+- The current version is included from the https://github.com/vossstef/tang_nano_20k_c64 project which only required minor changes to work on the Tang Nano 9k. 
+- PSRAM/HyperRAM controller for Tang Nano 9K:
+https://github.com/zf3/psram-tang-nano-9k
+
+These Open Source projects provided great inspiration and learnings. ❤️
+
 
 ## Contact
 
