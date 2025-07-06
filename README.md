@@ -17,7 +17,7 @@ The Tang Nano 9k seems to be in the sweet spot of being cheap, capable enough fo
 - Custom Kernel implementing a Memory Monitor
 - Kernel and Character ROM copied from Flash
 
-![Memory Monitor Demo](https://i.imgur.com/CzXFiKB.gif)
+![Memory Monitor Demo](https://i.imgur.com/dDoxtu8.gif)
 
 ## Getting Started
 
