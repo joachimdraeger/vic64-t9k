@@ -176,9 +176,9 @@ All main modules are instantiated in the [`top.v`](fpga/src/top.v) module. The t
 
 ### Clocks
 
-The HDMI video interface requires a 31.4 MHz pixel clock for the 800 x 576 resolution at 50 Hz PAL output. This clock is also used as the main ~32 MHz main clock. Additionally, HDMI requires a faster clock at 5x the pixel clock. To achieve that an PLL (Phase-Locked Loop) is used to generate 157 MHz 5x from the FPGA's 27 MHz system clock this is then divided by 5 for the 31.4 MHz pixel clock.
+The HDMI video interface requires a 31.4 MHz pixel clock for the 800 x 576 resolution at 50 Hz PAL output. This clock is also used as the ~32 MHz main clock. Additionally, HDMI requires a faster clock at 5x the pixel clock. To achieve that an PLL (Phase-Locked Loop) is used to generate 157 MHz 5x from the FPGA's 27 MHz system clock. This is then divided by 5 for the 31.4 MHz pixel clock.
 
-The [PSRAM controller's](https://github.com/zf3/psram-tang-nano-9k) clock needs to be fast enough to allow timed RAM access for the CPU and VIC-II chip. Additionally a 90 degree phase shifted clock is required for the controller. Another PLL is used to double the ~32 MHz main clock to ~64 MHz plus phase shifted. The clock domains should be separated properly, so the PSRAM clock could potentially be generated from the 27 MHz system clock.
+The [PSRAM controller's](https://github.com/zf3/psram-tang-nano-9k) clock needs to be fast enough to allow timed RAM access for the CPU and VIC-II chip. Additionally a 90 degree phase shifted clock is required for the controller. For this, the second  PLL is used to double the ~32 MHz main clock to ~64 MHz plus phase shifted. The clock domains should be separated properly, so the PSRAM clock could potentially be generated from the 27 MHz system clock.
 
 All clocks are instantiated in the [`clocks.v`](fpga/src/clocks.v) module.
 
